@@ -23,17 +23,15 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: "center",
     alignItems: "center",
+    padding: 20,
   },
   headerTitle: {
     fontSize: 20,
     fontWeight: "bold",
     color: "white",
-  },
-  editButton: {
-    width: 40,
-    height: 40,
-    justifyContent: "center",
-    alignItems: "center",
+    flex: 1,
+    textAlign: "center",
+    paddingRight: 40,
   },
   profileHeader: {
     alignItems: "center",
@@ -89,10 +87,15 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 3,
   },
+  sectionTitleRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 15,
+  },
   sectionTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 15,
     color: "#333",
   },
   infoItem: {
