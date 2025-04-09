@@ -38,7 +38,7 @@ const LoginD = () => {
 
           <View style={styles.inputContainer}>
             <View style={styles.inputWrapper}>
-              <Mail color="#8A2BE2" size={24} style={styles.inputIcon} />
+              <Mail color= "#8A2BE2" size={24} style={styles.inputIcon} />
               <TextInput
                 placeholder="Correo electrónico"
                 placeholderTextColor="#999"
@@ -51,7 +51,7 @@ const LoginD = () => {
             </View>
 
             <View style={styles.inputWrapper}>
-              <Lock color="#8A2BE2" size={24} style={styles.inputIcon} />
+              <Lock color= "#8A2BE2" size={24} style={styles.inputIcon} />
               <TextInput
                 placeholder="Contraseña"
                 placeholderTextColor="#999"
@@ -65,9 +65,9 @@ const LoginD = () => {
                 style={styles.passwordToggle}
               >
                 {showPassword ? (
-                  <EyeOff color="#8A2BE2" size={24} />
+                  <EyeOff color= "#8A2BE2" size={24} />
                 ) : (
-                  <Eye color="#8A2BE2" size={24} />
+                  <Eye color= "#8A2BE2" size={24} />
                 )}
               </TouchableOpacity>
             </View>

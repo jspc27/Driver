@@ -41,16 +41,16 @@ const styles = StyleSheet.create({
       shadowColor: '#000',
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.1,
-      shadowRadius: 4,
-      elevation: 3,
+      shadowRadius: 3,
+      elevation: 2,
     },
     inputIcon: {
       marginLeft: 16,
     },
     input: {
       flex: 1,
-      paddingVertical: 16,
-      paddingHorizontal: 12,
+      paddingVertical: 12,
+      paddingHorizontal: 10,
       fontSize: 16,
       color: '#333',
     },
@@ -59,20 +59,27 @@ const styles = StyleSheet.create({
     },
     loginButton: {
       backgroundColor: 'white',
-      borderRadius: 12,
-      paddingVertical: 16,
+      borderRadius: 10, // Reducido
+      paddingVertical: 12, // Reducido
       alignItems: 'center',
       shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
+      shadowOffset: { width: 0, height: 1 }, // Reducido
       shadowOpacity: 0.1,
-      shadowRadius: 4,
-      elevation: 3,
+      shadowRadius: 3, // Reducido
+      elevation: 2, // Reducido
+      marginTop: -10, // Ajustado
+    },
+    
+    loginButtonPressed: {
+      backgroundColor: '#f0f0f0', // Color más claro al presionar
+      shadowOpacity: 0.2, // Sombra más pronunciada
     },
     loginButtonText: {
-      color: '#8A2BE2',
+      color: "#8A2BE2",
       fontSize: 18,
       fontWeight: 'bold',
     },
+    
     signupContainer: {
       flexDirection: 'row',
       justifyContent: 'center',

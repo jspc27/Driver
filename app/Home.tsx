@@ -90,8 +90,8 @@ const HomeP = () => {
     };
 
     return (
-        <LinearGradient colors={['#CF5BA9', '#B33F8D']} style={styles.container}>
-            <StatusBar barStyle="light-content" backgroundColor="#FF69B4" />
+        <LinearGradient colors={['#6A0DAD', '#8A2BE2']} style={styles.container}>
+            <StatusBar barStyle="light-content" backgroundColor="#6A0DAD" />
             
             {/* Mapa como fondo */}
             <View style={styles.mapContainer}>
@@ -103,14 +103,14 @@ const HomeP = () => {
             {/* Botón de menú */}
             {!sidebarOpen && (
                 <TouchableOpacity style={styles.menuButton} onPress={toggleSidebar}>
-                    <MenuIcon size={28} color="#FF1493" />
+                    <MenuIcon size={28} color="#8A2BE2" />
                 </TouchableOpacity>
             )}
 
             {/* Sidebar animado */}
             <Animated.View style={[styles.sidebar, { left: sidebarAnim }]}>
                 <TouchableOpacity style={styles.closeButton} onPress={toggleSidebar}>
-                    <X size={28} color="#FF1493" />
+                    <X size={28} color="#8A2BE2" />
                 </TouchableOpacity>
 
                 {/* Perfil */}
@@ -125,23 +125,18 @@ const HomeP = () => {
                 {/* Menú */}
                 <View style={styles.menuSection}>
                     <TouchableOpacity onPress={() => router.push("/ProfileP")} style={styles.menuItem}>
-                        <User size={22} color="#FF1493" />
+                        <User size={22} color="#8A2BE2" />
                         <Text style={styles.menuText}>Mi Perfil</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => router.push("/TripsP")} style={styles.menuItem}>
-                        <Map size={22} color="#FF1493" />
+                        <Map size={22} color="#8A2BE2" />
                         <Text style={styles.menuText}>Mis Viajes</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.menuItem}>
-                        <Settings size={22} color="#FF1493" />
-                        <Text style={styles.menuText}>Configuración</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.menuItem}>
-                        <HelpCircle size={22} color="#FF1493" />
-                        <Text style={styles.menuText}>Ayuda</Text>
+                        <HelpCircle size={22} color="#8A2BE2" />
+                        <Text style={styles.menuText}>Ayuda/Soporte</Text>
                     </TouchableOpacity>
                 </View>
 
