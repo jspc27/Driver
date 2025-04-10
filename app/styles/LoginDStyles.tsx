@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
       shadowOpacity: 0.2, // Sombra más pronunciada
     },
     loginButtonText: {
-      color: "#8A2BE2",
+      color: "#FF69B4",
       fontSize: 18,
       fontWeight: 'bold',
     },

@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   logo: {
-    width: 160,
-    height: 160,
+    width: 200,
+    height: 200,
     marginBottom: -15,
   },
   logoText: {
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    backgroundColor: 'rgba(236, 130, 215, 0.5)',
     marginHorizontal: 5,
   },
   activeStepDot: {
@@ -55,6 +55,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
+    textShadowColor: 'rgba(0, 0, 0, 0.25)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 8,
     marginBottom: 15,
     textAlign: 'center',
   },
@@ -104,16 +107,16 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   vehicleImage: {
-    width: 70, // Ajusta el tamaño según sea necesario
+    width: 70, 
     height: 70,
-    marginBottom: 4, // Espaciado entre la imagen y el texto
+    marginBottom: 4, 
   },
   selectedVehicleType: {
-    backgroundColor: '#8A2BE2',
+    backgroundColor: '#FF69B4',
   },
   vehicleTypeText: {
     marginTop: 8,
-    color: '#8A2BE2',
+    color: '#FF69B4',
     fontWeight: 'bold',
   },
   selectedVehicleTypeText: {
@@ -161,7 +164,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   buttonText: {
-    color: "#8A2BE2",
+    color: "#FF69B4",
     fontSize: 18,
     fontWeight: 'bold',
   },

@@ -69,7 +69,7 @@ const RegisterD = () => {
           <View style={styles.inputContainer}>
             <Text style={styles.sectionTitle}>Datos Personales</Text>
             <View style={styles.inputWrapper}>
-              <User color='#8A2BE2' size={24} style={styles.inputIcon} />
+              <User color='#FF69B4' size={24} style={styles.inputIcon} />
               <TextInput 
                 placeholder="Nombre completo" 
                 placeholderTextColor="#999" 
@@ -81,7 +81,7 @@ const RegisterD = () => {
               />
             </View>
             <View style={styles.inputWrapper}>
-              <CreditCard color='#8A2BE2' size={24} style={styles.inputIcon} />
+              <CreditCard color='#FF69B4' size={24} style={styles.inputIcon} />
               <TextInput
                 placeholder="Cédula"
                 placeholderTextColor="#999"
@@ -93,7 +93,7 @@ const RegisterD = () => {
               />
             </View>
             <View style={styles.inputWrapper}>
-              <Mail color='#8A2BE2' size={24} style={styles.inputIcon} />
+              <Mail color='#FF69B4' size={24} style={styles.inputIcon} />
               <TextInput 
                 placeholder="Correo electrónico" 
                 placeholderTextColor="#999" 
@@ -105,7 +105,7 @@ const RegisterD = () => {
               />
             </View>
             <View style={styles.inputWrapper}>
-              <Phone color='#8A2BE2' size={24} style={styles.inputIcon} />
+              <Phone color='#FF69B4' size={24} style={styles.inputIcon} />
               <TextInput
                 placeholder="Teléfono"
                 placeholderTextColor="#999"
@@ -117,7 +117,7 @@ const RegisterD = () => {
               />
             </View>
             <View style={styles.inputWrapper}>
-              <Lock color='#8A2BE2' size={24} style={styles.inputIcon} />
+              <Lock color='#FF69B4' size={24} style={styles.inputIcon} />
               <TextInput 
                 placeholder="Contraseña" 
                 placeholderTextColor="#999" 
@@ -127,7 +127,7 @@ const RegisterD = () => {
                 style={styles.input} 
               />
               <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.passwordToggle}>
-                {showPassword ? <EyeOff color='#8A2BE2' size={24} /> : <Eye color='#8A2BE2' size={24} />}
+                {showPassword ? <EyeOff color='#FF69B4' size={24} /> : <Eye color='#FF69B4' size={24} />}
               </TouchableOpacity>
             </View>
           </View>
@@ -198,7 +198,7 @@ const RegisterD = () => {
           <View style={styles.inputContainer}>
             <Text style={styles.sectionTitle}>Datos del Vehículo</Text>
             <View style={styles.inputWrapper}>
-              <IdCard color='#8A2BE2' size={24} style={styles.inputIcon} />
+              <IdCard color='#FF69B4' size={24} style={styles.inputIcon} />
               <TextInput
                 placeholder="Número de licencia de conducción"
                 placeholderTextColor="#999"
@@ -209,7 +209,7 @@ const RegisterD = () => {
               />
             </View>
             <View style={styles.inputWrapper}>
-              <Car color='#8A2BE2' size={24} style={styles.inputIcon} />
+              <Car color='#FF69B4' size={24} style={styles.inputIcon} />
               <TextInput 
                 placeholder="Marca del vehículo" 
                 placeholderTextColor="#999" 
@@ -220,7 +220,7 @@ const RegisterD = () => {
               />
             </View>
             <View style={styles.inputWrapper}>
-              <Car color='#8A2BE2' size={24} style={styles.inputIcon} />
+              <Car color='#FF69B4' size={24} style={styles.inputIcon} />
               <TextInput 
                 placeholder="Modelo del vehículo" 
                 placeholderTextColor="#999" 
@@ -231,7 +231,7 @@ const RegisterD = () => {
               />
             </View>
             <View style={styles.inputWrapper}>
-              <Palette color='#8A2BE2' size={24} style={styles.inputIcon} />
+              <Palette color='#FF69B4' size={24} style={styles.inputIcon} />
               <TextInput 
                 placeholder="Color del vehiculo" 
                 placeholderTextColor="#999" 
@@ -242,7 +242,7 @@ const RegisterD = () => {
               />
             </View>
             <View style={styles.inputWrapper}>
-              <Car color='#8A2BE2' size={24} style={styles.inputIcon} />
+              <Car color='#FF69B4' size={24} style={styles.inputIcon} />
               <TextInput 
                 placeholder="Número de placa" 
                 placeholderTextColor="#999" 
@@ -294,10 +294,10 @@ const RegisterD = () => {
 
   return (
     <LinearGradient
-      colors={['#6A0DAD', '#8A2BE2']}
+      colors={['#FFE4F3', '#FFC1E3']}
       style={styles.container}
     >
-      <StatusBar barStyle="light-content" backgroundColor="#6A0DAD" />
+      <StatusBar barStyle="dark-content" backgroundColor="#FFE4F3" />
       <SafeAreaView style={styles.safeArea}>
         <KeyboardAvoidingView 
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
@@ -313,7 +313,7 @@ const RegisterD = () => {
                 style={styles.logo} 
                 resizeMode="contain" 
               />
-              <Text style={styles.logoText}>Conductora</Text>
+             {/* <Text style={styles.logoText}>Conductora</Text>*/}
             </View>
 
             {renderStepIndicator()}

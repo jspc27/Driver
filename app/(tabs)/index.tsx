@@ -16,10 +16,10 @@ const LoginD = () => {
 
   return (
     <LinearGradient
-      colors={['#6A0DAD', '#8A2BE2']} // Tonos morados vibrantes
+      colors={['#FFE4F3', '#FFC1E3']} // Tonos morados vibrantes
       style={styles.container}
     >
-        <StatusBar barStyle="light-content" backgroundColor="#6A0DAD" />
+        <StatusBar barStyle="dark-content" backgroundColor="#FFE4F3" />
       <SafeAreaView style={styles.safeArea}>
       <View>
   </View>
@@ -38,7 +38,7 @@ const LoginD = () => {
 
           <View style={styles.inputContainer}>
             <View style={styles.inputWrapper}>
-              <Mail color= "#8A2BE2" size={24} style={styles.inputIcon} />
+              <Mail color= "#FF69B4" size={24} style={styles.inputIcon} />
               <TextInput
                 placeholder="Correo electrónico"
                 placeholderTextColor="#999"
@@ -51,7 +51,7 @@ const LoginD = () => {
             </View>
 
             <View style={styles.inputWrapper}>
-              <Lock color= "#8A2BE2" size={24} style={styles.inputIcon} />
+              <Lock color= "#FF69B4" size={24} style={styles.inputIcon} />
               <TextInput
                 placeholder="Contraseña"
                 placeholderTextColor="#999"
@@ -65,9 +65,9 @@ const LoginD = () => {
                 style={styles.passwordToggle}
               >
                 {showPassword ? (
-                  <EyeOff color= "#8A2BE2" size={24} />
+                  <EyeOff color= "#FF69B4" size={24} />
                 ) : (
-                  <Eye color= "#8A2BE2" size={24} />
+                  <Eye color= "#FF69B4" size={24} />
                 )}
               </TouchableOpacity>
             </View>
