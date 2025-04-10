@@ -27,6 +27,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     color: "white",
+    textShadowColor: 'rgba(0, 0, 0, 0.25)',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10,
   },
   saveButton: {
     width: 40,

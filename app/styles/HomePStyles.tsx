@@ -93,6 +93,40 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
         elevation: 5,
     },
+    // Improved avatar menu styling
+    avatarMenuContainer: {
+        position: "absolute",
+        top: Platform.OS === "ios" ? 50 : 30,
+        right: 20,
+        zIndex: 10,
+    },
+    avatarSmall: {
+        width: 50,
+        height: 50,
+        borderRadius: 30,
+        borderWidth: 2,
+        borderColor: "#FFE4F3",
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 5,
+        elevation: 8,
+    },
+    avatarButtonContainer: {
+        shadowColor: "#FFE4F3",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.3,
+        shadowRadius: 4,
+        elevation: 5,
+    },
+    menuOverlay: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 9,
+    },
     avatar: {
         width: "100%",
         height: "100%",
@@ -130,7 +164,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginTop: 30,
         paddingVertical: 14,
-        backgroundColor: "#8A2BE2",
+        backgroundColor: "#fff",
         borderRadius: 12,
         paddingHorizontal: 20,
         justifyContent: "center",
@@ -142,15 +176,16 @@ const styles = StyleSheet.create({
     },
     logoutText: {
         fontSize: 16,
-        color: "#fff",
+        color: "#FF69B4",
         marginLeft: 10,
         fontWeight: "600",
     },
+    
     footer: {
         position: "absolute",
         bottom: 0,
         width: "100%",
-        backgroundColor: "rgba(255, 255, 255, 0.95)",
+        backgroundColor: "#FFE4F3",
         padding: 20,
         paddingTop: 25,
         paddingBottom: Platform.OS === 'ios' ? 35 : 25,
@@ -180,21 +215,30 @@ const styles = StyleSheet.create({
         borderColor: "#f0f0f0",
         fontSize: 15,
     },
-    button: {
-        width: "100%",
-        backgroundColor: "#8A2BE2",
-        paddingVertical: 14,
+    confirmButton: {
+        backgroundColor: '#fff', // Fondo rosa claro
         borderRadius: 12,
-        alignItems: "center",
-        marginTop: 5,
-        shadowColor: "#8A2BE2",
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.3,
-        shadowRadius: 5,
-        elevation: 6,
+        paddingVertical: 14,
+        paddingHorizontal: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.15,
+        shadowRadius: 4,
+        elevation: 3,
+        marginTop: 16, // Espaciado superior
+        alignSelf: 'center', // Centra el botón horizontalmente
+        width: '90%', // Ancho del botón
+    },
+    confirmButtonText: {
+        color: '#FF69B4', // Texto rosa oscuro
+        fontSize: 18,
+        fontWeight: 'bold',
+        letterSpacing: 0.5,
     },
     buttonText: {
-        color: "#fff",
+        color: "#FF69B4",
         fontSize: 16,
         fontWeight: "700",
         letterSpacing: 0.5,

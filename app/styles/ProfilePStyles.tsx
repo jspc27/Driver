@@ -24,14 +24,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+  
   },
   headerTitle: {
-    fontSize: 20,
+    fontSize: 23,
     fontWeight: "bold",
     color: "white",
     flex: 1,
     textAlign: "center",
     paddingRight: 40,
+    textShadowColor: 'rgba(0, 0, 0, 0.25)',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10,
   },
   profileHeader: {
     alignItems: "center",
@@ -57,6 +61,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
+    textShadowColor: 'rgba(0, 0, 0, 0.25)',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10,
   },
   ratingContainer: {
     flexDirection: "row",
@@ -167,7 +174,7 @@ const styles = StyleSheet.create({
   },
   logoutText: {
     fontSize: 16,
-    color: "#FF1493",
+    color: "#FF69B4",
     fontWeight: "bold",
   },
 });

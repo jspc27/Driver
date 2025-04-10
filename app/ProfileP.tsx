@@ -14,11 +14,11 @@ const ProfileP = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#FF69B4" />
+      <StatusBar barStyle="dark-content" backgroundColor="#FFE4F3" />
       
       {/* Header con gradiente */}
       <LinearGradient
-        colors={['#FF69B4', '#FF1493']}
+        colors={['#FFE4F3', '#FFC1E3']}
         style={styles.header}
       >
         <View style={styles.headerTop}>
@@ -26,7 +26,7 @@ const ProfileP = () => {
             style={styles.backButton} 
             onPress={() => router.push('/Home')}
           >
-            <ChevronLeft color="white" size={28} />
+            <ChevronLeft color="#FF69B4" size={28} />
           </TouchableOpacity>
           <Text style={styles.headerTitle}>Mi Perfil</Text>
         </View>
@@ -52,27 +52,23 @@ const ProfileP = () => {
             <TouchableOpacity 
               onPress={() => router.push('/EditProfileP')}
             >
-              <Edit2 color="black" size={20} />
+              <Edit2 color="#FF69B4" size={20} />
             </TouchableOpacity>
           </View>
           
           <View style={styles.infoItem}>
-            <Phone size={20} color="#FF1493" />
+            <Phone size={20} color="#FF69B4" />
             <Text style={styles.infoText}>{user.phone}</Text>
           </View>
           
           <View style={styles.infoItem}>
-            <Mail size={20} color="#FF1493" />
+            <Mail size={20} color="#FF69B4" />
             <Text style={styles.infoText}>{user.email}</Text>
           </View>
         </View>
 
         {/* Opciones del perfil */}
         <View style={styles.optionsSection}>
-          <TouchableOpacity style={styles.optionItem}>
-            <Text style={styles.optionText}>Historial de viajes</Text>
-          </TouchableOpacity>
-          
           <TouchableOpacity style={styles.optionItem}>
             <Text style={styles.optionText}>Ayuda y soporte</Text>
           </TouchableOpacity>

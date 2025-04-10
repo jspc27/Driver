@@ -45,11 +45,11 @@ const EditProfileP = () => {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.container}
     >
-      <StatusBar barStyle="light-content" backgroundColor="#FF69B4" />
+      <StatusBar barStyle="dark-content" backgroundColor="#FFE4F3" />
       
       {/* Header con gradiente */}
       <LinearGradient
-        colors={['#FF69B4', '#FF1493']}
+        colors={['#FFE4F3', '#FFC1E3']}
         style={styles.header}
       >
         <View style={styles.headerContent}>
@@ -57,14 +57,14 @@ const EditProfileP = () => {
             style={styles.backButton}
             onPress={() => router.push('/ProfileP')}
           >
-            <ChevronLeft color="white" size={28} />
+            <ChevronLeft color="#FF69B4" size={28} />
           </TouchableOpacity>
           <Text style={styles.headerTitle}>Editar Perfil</Text>
           <TouchableOpacity 
             style={styles.saveButton}
             onPress={handleSave}
           >
-            <Check color="white" size={28} />
+            <Check color="#FF69B4" size={28} />
           </TouchableOpacity>
         </View>
       </LinearGradient>
@@ -130,15 +130,6 @@ const EditProfileP = () => {
             </View>
           </View>
         </View>
-
-        {/* Botón principal para guardar 
-        <TouchableOpacity 
-          style={styles.saveButtonLarge}
-          onPress={handleSave}
-        >
-          <Text style={styles.saveButtonText}>Guardar cambios</Text>
-        </TouchableOpacity>
-        */}
       </ScrollView>
     </KeyboardAvoidingView>
   );
