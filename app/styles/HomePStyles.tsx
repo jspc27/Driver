@@ -71,29 +71,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0.15)',
         zIndex: 5,
     },
-    profileContainer: {
-        alignItems: "center",
-        marginTop: 25,
-        marginBottom: 30,
-        paddingBottom: 25,
-        borderBottomWidth: 1,
-        borderBottomColor: "#f0f0f0",
-    },
-    avatarContainer: {
-        width: 90,
-        height: 90,
-        borderRadius: 45,
-        overflow: "hidden",
-        marginBottom: 15,
-        borderWidth: 3,
-        borderColor: "#8A2BE2",
-        shadowColor: "#8A2BE2",
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-        elevation: 5,
-    },
-    // Improved avatar menu styling
     avatarMenuContainer: {
         position: "absolute",
         top: Platform.OS === "ios" ? 50 : 30,
@@ -127,67 +104,14 @@ const styles = StyleSheet.create({
         bottom: 0,
         zIndex: 9,
     },
-    avatar: {
-        width: "100%",
-        height: "100%",
-    },
-    username: {
-        fontSize: 19,
-        fontWeight: "700",
-        color: "#333",
-        marginBottom: 4,
-    },
-    userRole: {
-        fontSize: 15,
-        color: "#777",
-        fontWeight: "500",
-    },
-    menuSection: {
-        marginBottom: 20,
-    },
-    menuItem: {
-        flexDirection: "row",
-        alignItems: "center",
-        paddingVertical: 16,
-        paddingHorizontal: 10,
-        borderRadius: 12,
-        marginVertical: 5,
-    },
-    menuText: {
-        fontSize: 16,
-        marginLeft: 15,
-        color: "#333",
-        fontWeight: "500",
-    },
-    logoutButton: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginTop: 30,
-        paddingVertical: 14,
-        backgroundColor: "#fff",
-        borderRadius: 12,
-        paddingHorizontal: 20,
-        justifyContent: "center",
-        shadowColor: "#8A2BE2",
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.3,
-        shadowRadius: 5,
-        elevation: 6,
-    },
-    logoutText: {
-        fontSize: 16,
-        color: "#FF69B4",
-        marginLeft: 10,
-        fontWeight: "600",
-    },
     
-    footer: {
+    // Nuevos estilos para la vista de la conductora
+    driverFooter: {
         position: "absolute",
         bottom: 0,
         width: "100%",
         backgroundColor: "#FFE4F3",
         padding: 20,
-        paddingTop: 25,
         paddingBottom: Platform.OS === 'ios' ? 35 : 25,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
@@ -199,6 +123,218 @@ const styles = StyleSheet.create({
         elevation: 10,
         zIndex: 5,
     },
+    footerContent: {
+        width: "100%",
+        alignItems: "center",
+    },
+    statusContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
+        marginBottom: 15,
+        backgroundColor: "#fff",
+        padding: 15,
+        borderRadius: 12,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.15,
+        shadowRadius: 3,
+        elevation: 2,
+    },
+    statusText: {
+        fontSize: 16,
+        fontWeight: "600",
+        color: "#333",
+    },
+    statusSwitch: {
+        transform: [{ scaleX: 1.1 }, { scaleY: 1.1 }],
+    },
+    driverLocationText: {
+        fontSize: 14,
+        color: "#444",
+        textAlign: "center",
+        marginBottom: 10,
+        paddingHorizontal: 20,
+    },
+    driverStatusInfo: {
+        fontSize: 15,
+        fontWeight: "500",
+        textAlign: "center",
+    },
+    
+    // Estilos para el panel de solicitud de viaje
+    rideRequestContainer: {
+        position: "absolute",
+        bottom: 150, // Posicionado por encima del footer
+        left: 20,
+        right: 20,
+        backgroundColor: "#fff",
+        borderRadius: 16,
+        padding: 16,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.2,
+        shadowRadius: 6,
+        elevation: 8,
+        zIndex: 8,
+    },
+    rideRequestHeader: {
+        marginBottom: 12,
+    },
+    rideRequestTitle: {
+        fontSize: 18,
+        fontWeight: "700",
+        color: "#333",
+    },
+    
+    // Nuevos estilos para la información del pasajero
+    passengerInfoContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginBottom: 8,
+        paddingBottom: 8,
+    },
+    passengerPhoto: {
+        width: 45,
+        height: 45,
+        borderRadius: 22.5,
+        marginRight: 12,
+        borderWidth: 1.5,
+        borderColor: "#FFE4F3",
+    },
+    passengerDetails: {
+        flex: 1,
+    },
+    passengerName: {
+        fontSize: 16,
+        fontWeight: "600",
+        color: "#333",
+        marginBottom: 2,
+    },
+    ratingContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    ratingText: {
+        fontSize: 14,
+        color: "#555",
+        marginLeft: 4,
+    },
+    contactButtons: {
+        flexDirection: "row",
+    },
+    contactButton: {
+        width: 36,
+        height: 36,
+        borderRadius: 18,
+        backgroundColor: "#f5f5f5",
+        justifyContent: "center",
+        alignItems: "center",
+        marginLeft: 8,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+        elevation: 1,
+    },
+    phoneContainer: {
+        marginBottom: 10,
+    },
+    phoneText: {
+        fontSize: 14,
+        color: "#666",
+        marginLeft: 58, // Alineado con el nombre del pasajero
+    },
+    divider: {
+        height: 1,
+        backgroundColor: "#f0f0f0",
+        marginVertical: 10,
+    },
+    
+    rideRequestDetails: {
+        marginVertical: 12,
+    },
+    locationRow: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginVertical: 6,
+    },
+    locationPoint: {
+        width: 10,
+        height: 10,
+        borderRadius: 5,
+        backgroundColor: "#4CAF50",
+        marginRight: 10,
+    },
+    destinationPoint: {
+        backgroundColor: "#FF69B4",
+    },
+    locationText: {
+        fontSize: 15,
+        color: "#333",
+        flex: 1,
+    },
+    verticalLine: {
+        width: 2,
+        height: 20,
+        backgroundColor: "#ddd",
+        marginLeft: 4,
+    },
+    rideMetrics: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        marginVertical: 12,
+        paddingVertical: 10,
+        borderTopWidth: 1,
+        borderBottomWidth: 1,
+        borderColor: "#f0f0f0",
+    },
+    metricItem: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    metricText: {
+        marginLeft: 5,
+        fontSize: 15,
+        fontWeight: "500",
+        color: "#555",
+    },
+    rideRequestActions: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 10,
+    },
+    acceptButton: {
+        backgroundColor: "#4CAF50",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        paddingVertical: 12,
+        paddingHorizontal: 20,
+        borderRadius: 12,
+        flex: 1,
+        marginLeft: 8,
+    },
+    rejectButton: {
+        backgroundColor: "#FF5252",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        paddingVertical: 12,
+        paddingHorizontal: 20,
+        borderRadius: 12,
+        flex: 1,
+        marginRight: 8,
+    },
+    actionButtonText: {
+        color: "#fff",
+        fontWeight: "600",
+        fontSize: 15,
+        marginLeft: 5,
+    },
+    
+    // Manteniendo estilos originales necesarios
     input: {
         width: "100%",
         height: 50,
@@ -214,28 +350,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: "#f0f0f0",
         fontSize: 15,
-    },
-    confirmButton: {
-        backgroundColor: '#fff', // Fondo rosa claro
-        borderRadius: 12,
-        paddingVertical: 14,
-        paddingHorizontal: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.15,
-        shadowRadius: 4,
-        elevation: 3,
-        marginTop: 16, // Espaciado superior
-        alignSelf: 'center', // Centra el botón horizontalmente
-        width: '90%', // Ancho del botón
-    },
-    confirmButtonText: {
-        color: '#FF69B4', // Texto rosa oscuro
-        fontSize: 18,
-        fontWeight: 'bold',
-        letterSpacing: 0.5,
     },
     buttonText: {
         color: "#FF69B4",
