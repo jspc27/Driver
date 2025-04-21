@@ -90,7 +90,7 @@ const EditProfileP = () => {
           <View style={styles.inputGroup}>
             <Text style={styles.inputLabel}>Nombre completo</Text>
             <View style={styles.inputContainer}>
-              <User size={20} color="#FF1493" style={styles.inputIcon} />
+              <User size={20} color="#FF69B4" style={styles.inputIcon} />
               <TextInput
                 style={styles.input}
                 value={userData.name}
@@ -104,7 +104,7 @@ const EditProfileP = () => {
           <View style={styles.inputGroup}>
             <Text style={styles.inputLabel}>Correo electrónico</Text>
             <View style={styles.inputContainer}>
-              <Mail size={20} color="#FF1493" style={styles.inputIcon} />
+              <Mail size={20} color="#FF69B4" style={styles.inputIcon} />
               <TextInput
                 style={styles.input}
                 value={userData.email}
@@ -119,7 +119,7 @@ const EditProfileP = () => {
           <View style={styles.inputGroup}>
             <Text style={styles.inputLabel}>Número de teléfono</Text>
             <View style={styles.inputContainer}>
-              <Phone size={20} color="#FF1493" style={styles.inputIcon} />
+              <Phone size={20} color="#FF69B4" style={styles.inputIcon} />
               <TextInput
                 style={styles.input}
                 value={userData.phone}

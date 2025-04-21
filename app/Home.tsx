@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { View, Text, TouchableOpacity, Animated, StatusBar, Image, TextInput, Alert, Switch, Linking } from "react-native";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE, Marker, Polyline } from "react-native-maps";
 import * as Location from "expo-location";
 import { User, HelpCircle, LogOut, Check, X, Clock, MapPin, MessageCircle, Phone, Star } from "lucide-react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "./styles/HomePStyles";
-import { ExternalPathString, RelativePathString, router, UnknownInputParams } from "expo-router";
+import { ExternalPathString, RelativePathString, router } from "expo-router";
 
 const HomeP = () => {
     const [menuVisible, setMenuVisible] = useState(false);
@@ -13,25 +13,94 @@ const HomeP = () => {
     const [isDriverActive, setIsDriverActive] = useState(false);
     const [showRideRequest, setShowRideRequest] = useState(false);
     const [region, setRegion] = useState({
-        latitude: 4.6097,
-        longitude: -74.0817,
+        latitude: 3.4516, // Coordenadas de Cali
+        longitude: -76.5319,
         latitudeDelta: 0.05,
         longitudeDelta: 0.05,
     });
-    
-    // Datos de ejemplo para el servicio propuesto
+
     const [rideRequest, setRideRequest] = useState({
-        pickupLocation: "Calle 127 # 11B-42",
-        destination: "Centro Comercial Santafé",
-        distance: 3.5, // Kilómetros
-        estimatedTime: 12, // Minutos
+        pickupLocation: "Av. Circunvalar #9-42, Belen, Cali, Valle del Cauca", // Dirección de recogida
+        destination: "Centro Comercial Palmetto", // Destino
+        distance: 3.5, // Distancia en kilómetros
+        estimatedTime: 12, // Tiempo estimado en minutos
         passenger: {
             name: "Carolina Gómez",
             phone: "+57 315 789 4321",
             whatsapp: "+573157894321",
-            photo: "https://i.pravatar.cc/150?img=23"
-        }
+            photo: "https://i.pravatar.cc/150?img=23",
+            latitude: 3.4409, // Coordenadas del pasajero en Cali
+            longitude: -76.5225,
+        },
     });
+
+    const [routeToPickup, setRouteToPickup] = useState<{ latitude: number; longitude: number }[]>([]);
+    
+    const fetchRouteToPickup = async () => {
+        if (!region.latitude || !region.longitude) {
+            console.warn("Ubicación actual no disponible.");
+            return;
+        }
+    
+        const origin = `${region.latitude},${region.longitude}`;
+        const destination = `${rideRequest.passenger.latitude},${rideRequest.passenger.longitude}`;
+        const apiKey = "AIzaSyB2OJc4ACBmYRNyILaTTCGJicbApIU-cqE"; 
+    
+        console.log("🧭 Origen:", origin);
+        console.log("🧭 Destino:", destination);
+    
+        try {
+            const response = await fetch(
+                `https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}&key=${apiKey}`
+            );
+            const data = await response.json();
+    
+            if (data.routes.length > 0) {
+                const points = data.routes[0].overview_polyline.points;
+                const coordinates = decodePolyline(points);
+                setRouteToPickup(coordinates);
+            } else {
+                console.error("❌ No se encontró una ruta.");
+                console.log("Google response:", data);
+            }
+        } catch (error) {
+            console.error("🚨 Error al obtener la ruta:", error);
+        }
+    };
+    
+    
+    // Decodifica la polyline de Google Maps
+    const decodePolyline = (t: string, e = 5) => {
+        let points = [];
+        let index = 0,
+            lat = 0,
+            lng = 0;
+    
+        while (index < t.length) {
+            let b, shift = 0,
+                result = 0;
+            do {
+                b = t.charCodeAt(index++) - 63;
+                result |= (b & 0x1f) << shift;
+                shift += 5;
+            } while (b >= 0x20);
+            const dlat = (result & 1) !== 0 ? ~(result >> 1) : result >> 1;
+            lat += dlat;
+    
+            shift = 0;
+            result = 0;
+            do {
+                b = t.charCodeAt(index++) - 63;
+                result |= (b & 0x1f) << shift;
+                shift += 5;
+            } while (b >= 0x20);
+            const dlng = (result & 1) !== 0 ? ~(result >> 1) : result >> 1;
+            lng += dlng;
+    
+            points.push({ latitude: lat / 1e5, longitude: lng / 1e5 });
+        }
+        return points;
+    };
     
     // Animation references
     const menuAnimation = useRef(new Animated.Value(0)).current;
@@ -44,7 +113,7 @@ const HomeP = () => {
                 Alert.alert("Permiso denegado", "No se pudo acceder a la ubicación");
                 return;
             }
-            
+
             await Location.watchPositionAsync(
                 {
                     accuracy: Location.Accuracy.High,
@@ -54,36 +123,10 @@ const HomeP = () => {
                 async (location) => {
                     const { latitude, longitude } = location.coords;
                     setRegion((prev) => ({ ...prev, latitude, longitude }));
-                    await obtenerDireccion(latitude, longitude);
                 }
             );
         };
 
-        const obtenerDireccion = async (lat: number, lng: number) => {
-            try {
-                let response = await fetch(
-                    `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`, 
-                    {
-                        headers: {
-                            'User-Agent': 'UberGirl (prietojari27@gmail.com)'
-                        }
-                    }
-                );
-        
-                const textResponse = await response.text();
-                let data = JSON.parse(textResponse);
-        
-                if (data.address) {
-                    setUbicacion(data.address.road || "Ubicación no encontrada");
-                } else {
-                    setUbicacion("Ubicación no encontrada");
-                }
-            } catch (error) {
-                console.error("Error al obtener la dirección:", error);
-                setUbicacion("Error al obtener ubicación");
-            }
-        };
-        
         obtenerUbicacion();
     }, []);
 
@@ -101,6 +144,7 @@ const HomeP = () => {
         
         return () => clearTimeout(timeout);
     }, [isDriverActive]);
+    
 
     // Animaciones
     useEffect(() => {
@@ -133,11 +177,16 @@ const HomeP = () => {
     const toggleDriverActive = () => {
         setIsDriverActive(!isDriverActive);
     };
+    useEffect(() => {
+        if (!showRideRequest && isDriverActive) {
+            fetchRouteToPickup();
+        }
+    }, [showRideRequest, isDriverActive]);    
     
     const handleAcceptRide = () => {
-        // Lógica para aceptar el viaje
         setShowRideRequest(false);
-    };
+        fetchRouteToPickup();
+    };    
     
     const handleRejectRide = () => {
         // Lógica para rechazar el viaje
@@ -183,10 +232,31 @@ const HomeP = () => {
         <LinearGradient colors={['#FFE4F3', '#FFC1E3']} style={styles.container}>
             <StatusBar barStyle="dark-content" backgroundColor="#FFE4F3" />
             
-            {/* Mapa como fondo */}
+            {/* Implementación de Google Maps */}
             <View style={styles.mapContainer}>
-                <MapView style={styles.map} region={region}>
-                    <Marker coordinate={{ latitude: region.latitude, longitude: region.longitude }} />
+                <MapView
+                    provider={PROVIDER_GOOGLE}
+                    style={styles.map}
+                    region={region}
+                    initialRegion={region}
+                >
+                    <Marker
+  coordinate={{ latitude: region.latitude, longitude: region.longitude }}
+  title="Tú (conductora)"
+  pinColor="red"
+/>
+<Marker
+  coordinate={{ latitude: rideRequest.passenger.latitude, longitude: rideRequest.passenger.longitude }}
+  title="Pasajera"
+  pinColor="green"
+/>
+                    {routeToPickup.length > 0 && (
+                        <Polyline
+                            coordinates={routeToPickup}
+                            strokeColor="#FF69B4"
+                            strokeWidth={4}
+                        />
+                    )}
                 </MapView>
             </View>
             

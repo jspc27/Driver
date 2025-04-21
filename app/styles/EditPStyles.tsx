@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     right: 0,
-    backgroundColor: "#FF1493",
+    backgroundColor: "#FF69B4",
     width: 40,
     height: 40,
     borderRadius: 20,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   changePhotoText: {
     marginTop: 10,
-    color: "#FF1493",
+    color: "#FF69B4",
     fontWeight: "500",
     fontSize: 16,
   },

@@ -212,15 +212,6 @@ const styles = StyleSheet.create({
         color: "#333",
         marginBottom: 2,
     },
-    ratingContainer: {
-        flexDirection: "row",
-        alignItems: "center",
-    },
-    ratingText: {
-        fontSize: 14,
-        color: "#555",
-        marginLeft: 4,
-    },
     contactButtons: {
         flexDirection: "row",
     },

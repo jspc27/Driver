@@ -9,13 +9,23 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "AIzaSyAlxUYAjNPv8WIuNA-XaquKim7IX77U4tg"
+      },
+      "bundleIdentifier": "com.yourcompany.driver"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAlxUYAjNPv8WIuNA-XaquKim7IX77U4tg"
+        }
+      },
+      "package": "com.yourcompany.driver"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +41,12 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Permitir a Driver acceder a tu ubicación."
         }
       ]
     ],
