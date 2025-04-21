@@ -77,7 +77,7 @@ const ProfileP = () => {
             <Text style={styles.optionText}>Cambiar contraseña</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={[styles.optionItem, styles.logoutButton]}>
+          <TouchableOpacity style={[styles.optionItem, styles.logoutButton]} onPress={() => router.push('/')}>
             <Text style={styles.logoutText}>Cerrar sesión</Text>
           </TouchableOpacity>
         </View>

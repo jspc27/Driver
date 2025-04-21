@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, SafeAreaView, KeyboardAvoidingView, Platform, StatusBar, ScrollView } from 'react-native';
-import { Lock, Mail, EyeOff, Eye, Car, Phone, Palette, ChevronLeft, IdCard, User, CreditCard } from 'lucide-react-native';
+import { Lock, Mail, EyeOff, Eye, Car, Phone, Palette, ChevronLeft, IdCard, User, CreditCard, Hash } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import styles from "./styles/RegisterDStyles";
@@ -242,7 +242,7 @@ const RegisterD = () => {
               />
             </View>
             <View style={styles.inputWrapper}>
-              <Car color='#FF69B4' size={24} style={styles.inputIcon} />
+              <Hash color='#FF69B4' size={24} style={styles.inputIcon} />
               <TextInput 
                 placeholder="Número de placa" 
                 placeholderTextColor="#999" 
@@ -313,7 +313,6 @@ const RegisterD = () => {
                 style={styles.logo} 
                 resizeMode="contain" 
               />
-             {/* <Text style={styles.logoText}>Conductora</Text>*/}
             </View>
 
             {renderStepIndicator()}

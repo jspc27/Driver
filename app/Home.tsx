@@ -135,20 +135,12 @@ const HomeP = () => {
     };
     
     const handleAcceptRide = () => {
-        Alert.alert(
-            "Viaje Aceptado", 
-            "Has aceptado el viaje. Dirígete a recoger a tu pasajera.",
-            [{ text: "OK" }]
-        );
+        // Lógica para aceptar el viaje
         setShowRideRequest(false);
     };
     
     const handleRejectRide = () => {
-        Alert.alert(
-            "Viaje Rechazado", 
-            "Has rechazado el viaje. Seguirás recibiendo otras solicitudes.",
-            [{ text: "OK" }]
-        );
+        // Lógica para rechazar el viaje
         setShowRideRequest(false);
     };
     
